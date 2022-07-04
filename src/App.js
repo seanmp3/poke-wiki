@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from "react"
+import {Routes, Route} from "react-router-dom"
+
+import Navigation from "./routes/navigation/index"
+import Home from "./routes/home/index"
+import Pokedex from "./routes/pokedex/index"
+import TypeMatchups from "./routes/type-matchups/index"
+import TypeBuilder from "./routes/team-builder/index"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="pokedex" element={<Pokedex />} />
+        <Route path="type-matchups" element={<TypeMatchups />} />
+        <Route path="team-builder" element={<TypeBuilder />} />
+      </Route>
+    </Routes>
+  )
 }
 
 export default App;
