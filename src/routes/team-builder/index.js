@@ -1,6 +1,6 @@
 const TeamBuilder = () => {
   return (
-    <h2></h2>
+    <h2>Coming Soon</h2>
   )
 }
 

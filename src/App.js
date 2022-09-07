@@ -7,7 +7,7 @@ import Pokedex from "./routes/pokedex/index"
 import TypeMatchups from "./routes/type-matchups/index"
 import TypeBuilder from "./routes/team-builder/index"
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>

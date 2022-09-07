@@ -1,30 +1,45 @@
 import {Outlet, Link} from "react-router-dom"
-import {Fragment} from "react"
 
-import "../../styles/navigation.scss"
+import styled from "styled-components"
 
 const Navigation = () => {
   return (
-    <Fragment>
-      <div className="nav">
-        <Link className="nav-home" to="/">
+    <>
+      <NavContainer>
+        <NavHomeLink to="/">
           <h1>Poketch App</h1>
-        </Link>
-        <div className="nav-modes-container">
-          <Link className="nav-mode" to="/pokedex">
+        </NavHomeLink>
+        <NavAppsContainer>
+          <NavLinks to="/pokedex">
             <h3>Pokedex</h3>
-          </Link>
-          <Link className="nav-mode" to="/type-matchups">
+          </NavLinks>
+          <NavLinks to="/type-matchups">
             <h3>Type Matchups</h3>
-          </Link>
-          <Link className="nav-mode" to="/team-builder">
+          </NavLinks>
+          <NavLinks to="/team-builder">
             <h3>Team Builder</h3>
-          </Link>
-        </div>
-      </div>
+          </NavLinks>
+        </NavAppsContainer>
+      </NavContainer>
       <Outlet />
-    </Fragment>
+    </>
   )
 }
+
+const NavContainer = styled.div`
+
+`
+
+const NavAppsContainer = styled.div`
+
+`
+
+const NavHomeLink = styled(Link)`
+
+`
+
+const NavLinks = styled(Link)`
+
+`
 
 export default Navigation
