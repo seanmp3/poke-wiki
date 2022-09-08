@@ -7,6 +7,33 @@ const PokemonCard = ({pokemon}) => {
   )
   const [pokemonInfo, setPokemonInfo] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  
+  let dispName
+  const divByDash = pokemon.name.split("-")
+  if(divByDash[0] === "mr"){
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1) + ". "
+    + divByDash[1].charAt(0).toUpperCase() 
+    + divByDash[1].slice(1)
+  }else if(pokemon.name === "type-null"){
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1) + ": "
+    + divByDash[1].charAt(0).toUpperCase() 
+    + divByDash[1].slice(1)
+  }else if(divByDash[1] === "o"){
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1) + "-" + divByDash[1]
+  }else if(divByDash[1] === "z"){
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1) + "-" + divByDash[1].toUpperCase()
+  }else if(pokemon.name !== "ho-oh" && divByDash[0] !== "tapu"){
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1)
+  }else{
+    dispName = divByDash[0].charAt(0).toUpperCase() 
+    + divByDash[0].slice(1) + "-" + 
+    divByDash[1].charAt(0).toUpperCase() + divByDash[1].slice(1)
+  }
 
   useEffect(() => {
     setIsLoading(true)
@@ -35,7 +62,7 @@ const PokemonCard = ({pokemon}) => {
 
   return (
     <div>
-      <h3>{pokemon.name}</h3>
+      <h3>{dispName}</h3>
     </div>
   )
 }

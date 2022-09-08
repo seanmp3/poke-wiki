@@ -6,7 +6,7 @@ import PokemonList from "../../components/PokemonList"
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([])
   const [currentGenUrl, setCurrentGenUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon?limit=151"//897 color-DD1C1A
+    "https://pokeapi.co/api/v2/pokemon?limit=151"
   )
   const [isLoading, setIsLoading] = useState(true)
   

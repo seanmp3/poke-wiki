@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <h2></h2>
+    <h2>Poketch App</h2>
   )
 }
 

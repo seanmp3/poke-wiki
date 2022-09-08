@@ -2,6 +2,25 @@ import {Outlet, Link} from "react-router-dom"
 
 import styled from "styled-components"
 
+const NavContainer = styled.div`
+  height: 4rem;
+  display: flex;
+  background: #B02624;
+  margin: 1rem, 10rem;
+`
+
+const NavAppsContainer = styled.div`
+  background: #B02624;
+`
+
+const NavHomeLink = styled(Link)`
+  background: #B02624;
+`
+
+const NavLinks = styled(Link)`
+  background: #B02624;
+`
+
 const Navigation = () => {
   return (
     <>
@@ -25,21 +44,5 @@ const Navigation = () => {
     </>
   )
 }
-
-const NavContainer = styled.div`
-
-`
-
-const NavAppsContainer = styled.div`
-
-`
-
-const NavHomeLink = styled(Link)`
-
-`
-
-const NavLinks = styled(Link)`
-
-`
 
 export default Navigation
