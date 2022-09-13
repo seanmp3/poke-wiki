@@ -119,10 +119,10 @@ const Pokedex = () => {
         <h4 onClick={(e) => {
           e.preventDefault()
           setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=96&offset=809"
+            "https://pokeapi.co/api/v2/pokemon?limit=89&offset=809"
           )
           setCurrentGenText("Galarian Pokemon")
-        }}>810-905</h4>
+        }}>810-898</h4>
       </GenSelectors>
       <PokemonList pokemon={pokemon} />
     </>

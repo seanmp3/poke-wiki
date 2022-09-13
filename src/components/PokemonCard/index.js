@@ -60,20 +60,25 @@ const PokemonCard = ({pokemon}) => {
     return () => cancel()
   }, [currentPokemonUrl])
 
-  if (isLoading) return <h2>Loading...</h2>
+  const Load = styled.h2`
+    text-align: center;
+  `
+
+  if (isLoading) return <Load>Loading...</Load>
 
   const PokeCard = styled.div`
     display: grid;
+    text-align: center;
     grid-auto-flows: row;
-    grid-template-columns: 3fr 3fr 5fr 4fr 5fr;
-    grid-template-rows: 5rem;
+    grid-template-columns: 3fr 1fr 4fr 2fr 4fr;
+    grid-template-rows: 6rem;
   `
 
   return (
     <PokeCard>
-      {console.log(pokemonInfo.abilities)}
+      {console.log(pokemonInfo)}
       <h3>{pokemonInfo.id}</h3>
-      <h3>Photo</h3>
+      <img src={pokemonInfo.sprites.front_default} alt="pokemon"/>
       <h3>{dispName}</h3>
       <span>
         {pokemonInfo.types.map(t => (

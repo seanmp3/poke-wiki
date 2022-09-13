@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 import PokemonCard from "../PokemonCard"
+import PokemonCardLabels from "../PokemonCardLabels"
 
 const PokeList = styled.div`
   display: grid;
@@ -11,6 +12,7 @@ const PokeList = styled.div`
 const PokemonList = ({pokemon}) => {
   return (
     <PokeList>
+      <PokemonCardLabels/>
       {pokemon.map(p => (
         <PokemonCard key={p.name} pokemon={p}/>
       ))}
