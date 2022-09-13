@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
+import styled from "styled-components"
 
 const PokemonCard = ({pokemon}) => {
   const [currentPokemonUrl, setCurrentPokemonUrl] = useState(
@@ -8,6 +9,7 @@ const PokemonCard = ({pokemon}) => {
   const [pokemonInfo, setPokemonInfo] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   
+  //filtering exact pokemon display names
   let dispName
   const divByDash = pokemon.name.split("-")
   if(divByDash[0] === "mr"){
@@ -23,7 +25,7 @@ const PokemonCard = ({pokemon}) => {
   }else if(divByDash[1] === "o"){
     dispName = divByDash[0].charAt(0).toUpperCase() 
     + divByDash[0].slice(1) + "-" + divByDash[1]
-  }else if(divByDash[1] === "z"){
+  }else if(divByDash[1] === "z" || divByDash[0] === "nidoran"){
     dispName = divByDash[0].charAt(0).toUpperCase() 
     + divByDash[0].slice(1) + "-" + divByDash[1].toUpperCase()
   }else if(pokemon.name !== "ho-oh" && divByDash[0] !== "tapu"){
@@ -60,10 +62,30 @@ const PokemonCard = ({pokemon}) => {
 
   if (isLoading) return <h2>Loading...</h2>
 
+  const PokeCard = styled.div`
+    display: grid;
+    grid-auto-flows: row;
+    grid-template-columns: 3fr 3fr 5fr 4fr 5fr;
+    grid-template-rows: 5rem;
+  `
+
   return (
-    <div>
+    <PokeCard>
+      {console.log(pokemonInfo.abilities)}
+      <h3>{pokemonInfo.id}</h3>
+      <h3>Photo</h3>
       <h3>{dispName}</h3>
-    </div>
+      <span>
+        {pokemonInfo.types.map(t => (
+          <h3>{t.type.name}</h3>
+        ))}
+      </span>
+      <span>
+        {pokemonInfo.abilities.map(a => (
+          <h3>{a.ability.name}</h3>
+        ))}
+      </span>
+    </PokeCard>
   )
 }
 

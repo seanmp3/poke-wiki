@@ -1,8 +1,11 @@
 /*css reset*/
 * {
-  background: #D7D7D7;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #00396B;
+  color: #000;
+}
+
+body {
+  background: #D7D7D7;
 }

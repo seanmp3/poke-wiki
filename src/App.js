@@ -4,7 +4,6 @@ import Navigation from "./routes/navigation/index"
 import Home from "./routes/home/index"
 import Pokedex from "./routes/pokedex/index"
 import TypeMatchups from "./routes/type-matchups/index"
-import TypeBuilder from "./routes/team-builder/index"
 
 const App = () => {
   return (
@@ -13,7 +12,6 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="pokedex" element={<Pokedex />} />
         <Route path="type-matchups" element={<TypeMatchups />} />
-        <Route path="team-builder" element={<TypeBuilder />} />
       </Route>
     </Routes>
   )

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import axios from "axios"
+import styled from "styled-components"
 
 import PokemonList from "../../components/PokemonList"
 
@@ -7,6 +8,9 @@ const Pokedex = () => {
   const [pokemon, setPokemon] = useState([])
   const [currentGenUrl, setCurrentGenUrl] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=151"
+  )
+  const [currentGenText, setCurrentGenText] = useState(
+    "Kantonese Pokemon"
   )
   const [isLoading, setIsLoading] = useState(true)
   
@@ -35,14 +39,34 @@ const Pokedex = () => {
 
   if (isLoading) return <h2>Loading...</h2>
 
+  const GenLabel = styled.h2`
+    text-align: center;
+    margin: 1rem 0;
+  `
+
+  const GenSelectors = styled.span`
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+
+    h4 {
+      cursor: pointer;
+    }
+  `
+
   return (
     <>
-      <span>
+      <GenLabel>{currentGenText}</GenLabel>
+      <GenSelectors>
         <h4 onClick={(e) => {
           e.preventDefault()
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=151"
           )
+          setCurrentGenText("Kantonese Pokemon")
         }}>1-151</h4>
 
         <h4 onClick={(e) => {
@@ -50,6 +74,7 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
           )
+          setCurrentGenText("Johtonian Pokemon")
         }}>152-251</h4>
 
         <h4 onClick={(e) => {
@@ -57,6 +82,7 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=135&offset=251"
           )
+          setCurrentGenText("Hoenn Pokemon")
         }}>252-386</h4>
 
         <h4 onClick={(e) => {
@@ -64,6 +90,7 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=107&offset=386"
           )
+          setCurrentGenText("Sinnohian Pokemon")
         }}>387-493</h4>
 
         <h4 onClick={(e) => {
@@ -71,6 +98,7 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493"
           )
+          setCurrentGenText("Unovan Pokemon")
         }}>494-649</h4>
 
         <h4 onClick={(e) => {
@@ -78,12 +106,14 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649"
           )
+          setCurrentGenText("Kalosian Pokemon")
         }}>650-721</h4>
         <h4 onClick={(e) => {
           e.preventDefault()
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721"
           )
+          setCurrentGenText("Alolan Pokemon")
         }}>722-809</h4>
 
         <h4 onClick={(e) => {
@@ -91,8 +121,9 @@ const Pokedex = () => {
           setCurrentGenUrl(
             "https://pokeapi.co/api/v2/pokemon?limit=96&offset=809"
           )
+          setCurrentGenText("Galarian Pokemon")
         }}>810-905</h4>
-      </span>
+      </GenSelectors>
       <PokemonList pokemon={pokemon} />
     </>
   )
