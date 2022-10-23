@@ -9,7 +9,12 @@ const PokeList = styled.div`
   margin: auto;
 `
 
-const PokemonList = ({pokemon}) => {
+const LoadingContainer = styled.h2`
+  text-align: center;
+`
+
+const PokemonList = ({pokemon, loading}) => {
+  if (loading) return <LoadingContainer>Loading...</LoadingContainer>
   return (
     <PokeList>
       <PokemonCardLabels/>

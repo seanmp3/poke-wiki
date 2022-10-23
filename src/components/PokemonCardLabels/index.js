@@ -7,7 +7,7 @@ const PokemonCardLabels = () => {
     border-radius: 2.5%;
     background: #999;
     grid-auto-flows: row;
-    grid-template-columns: 3fr 1fr 4fr 2fr 4fr;
+    grid-template-columns: 3fr 2fr 4fr 2fr 4fr;
     grid-template-rows: 2rem;
     margin-bottom: 1rem;
   `

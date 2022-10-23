@@ -37,7 +37,19 @@ const Pokedex = () => {
     return () => cancel()
   }, [currentGenUrl])
 
-  if (isLoading) return <h2>Loading...</h2>
+  const Main = styled.main`
+    display: flex;
+    justify-content: center;
+  `
+
+  const PokedexContainer = styled.section`
+    background: #C7C7C7;
+    border-radius: .5rem;
+    min-height: 79vh;
+    width: 90%;
+    border: 1px solid #000;
+    margin-bottom: 2rem;
+  `
 
   const GenLabel = styled.h2`
     text-align: center;
@@ -58,74 +70,76 @@ const Pokedex = () => {
   `
 
   return (
-    <>
-      <GenLabel>{currentGenText}</GenLabel>
-      <GenSelectors>
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=151"
-          )
-          setCurrentGenText("Kantonese Pokemon")
-        }}>1-151</h4>
+    <Main>
+      <PokedexContainer>
+        <GenLabel>{currentGenText}</GenLabel>
+        <GenSelectors>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=151"
+            )
+            setCurrentGenText("Kantonese Pokemon")
+          }}>1-151</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
-          )
-          setCurrentGenText("Johtonian Pokemon")
-        }}>152-251</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
+            )
+            setCurrentGenText("Johtonian Pokemon")
+          }}>152-251</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=135&offset=251"
-          )
-          setCurrentGenText("Hoenn Pokemon")
-        }}>252-386</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=135&offset=251"
+            )
+            setCurrentGenText("Hoenn Pokemon")
+          }}>252-386</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=107&offset=386"
-          )
-          setCurrentGenText("Sinnohian Pokemon")
-        }}>387-493</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=107&offset=386"
+            )
+            setCurrentGenText("Sinnohian Pokemon")
+          }}>387-493</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493"
-          )
-          setCurrentGenText("Unovan Pokemon")
-        }}>494-649</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493"
+            )
+            setCurrentGenText("Unovan Pokemon")
+          }}>494-649</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649"
-          )
-          setCurrentGenText("Kalosian Pokemon")
-        }}>650-721</h4>
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721"
-          )
-          setCurrentGenText("Alolan Pokemon")
-        }}>722-809</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649"
+            )
+            setCurrentGenText("Kalosian Pokemon")
+          }}>650-721</h4>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721"
+            )
+            setCurrentGenText("Alolan Pokemon")
+          }}>722-809</h4>
 
-        <h4 onClick={(e) => {
-          e.preventDefault()
-          setCurrentGenUrl(
-            "https://pokeapi.co/api/v2/pokemon?limit=89&offset=809"
-          )
-          setCurrentGenText("Galarian Pokemon")
-        }}>810-898</h4>
-      </GenSelectors>
-      <PokemonList pokemon={pokemon} />
-    </>
+          <h4 onClick={(e) => {
+            e.preventDefault()
+            setCurrentGenUrl(
+              "https://pokeapi.co/api/v2/pokemon?limit=89&offset=809"
+            )
+            setCurrentGenText("Galarian Pokemon")
+          }}>810-898</h4>
+        </GenSelectors>
+        <PokemonList pokemon={pokemon} loading={isLoading}/>
+      </PokedexContainer>
+    </Main>
   )
 }
 

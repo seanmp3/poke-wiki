@@ -7,7 +7,7 @@ const NavContainer = styled.div`
   height: 8rem;
   display: flex;
   background: #B02624;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
   margin: 1rem, 0;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -18,6 +18,7 @@ const NavContainer = styled.div`
 
 const NavBackdrop = styled.div`
   height: 8rem;
+  margin-bottom: 2rem;
 `
 
 const NavHomeLink = styled(Link)`
@@ -58,15 +59,15 @@ const Navigation = () => {
   return (
     <>
       <NavContainer>
-          <NavLinks to="/pokedex">
-            <h3>Pokedex</h3>
-          </NavLinks>
-          <NavHomeLink to="/">
-            <Logo/>
-          </NavHomeLink>
-          <NavLinks to="/type-matchups">
-            <h3>Type Matchups</h3>
-          </NavLinks>
+        <NavLinks to="/pokedex">
+          <h3>Pokedex</h3>
+        </NavLinks>
+        <NavHomeLink to="/">
+          <Logo/>
+        </NavHomeLink>
+        <NavLinks to="/type-matchups">
+          <h3>Type Matchups</h3>
+        </NavLinks>
       </NavContainer>
       <NavBackdrop/>
       <Outlet />

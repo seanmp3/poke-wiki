@@ -1,111 +1,129 @@
 const typeMatchups = [
   {
+    "id": "0",
     "type": "Normal",
-    "no-effect": ["Ghost"],
-    "weak-towards": ["Rock","Steel"],
-    "strong-towards": []
+    "noEffect": ["Ghost"],
+    "weakTowards": ["Rock","Steel"],
+    "strongTowards": []
   },
   {
+    "id": "1",
     "type": "Fire",
-    "no-effect": [],
-    "weak-towards": ["Fire","Water","Rock","Dragon"],
-    "strong-towards": ["Grass","Ice","Bug","Steel"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Water","Rock","Dragon"],
+    "strongTowards": ["Grass","Ice","Bug","Steel"]
   },
   {
+    "id": "2",
     "type": "Water",
-    "no-effect": [],
-    "weak-towards": ["Water","Grass","Dragon"],
-    "strong-towards": ["Fire","Ground","Rock"]
+    "noEffect": [],
+    "weakTowards": ["Water","Grass","Dragon"],
+    "strongTowards": ["Fire","Ground","Rock"]
   },
   {
+    "id": "3",
     "type": "Electric",
-    "no-effect": ["Ground"],
-    "weak-towards": ["Electric","Grass","Dragon"],
-    "strong-towards": ["Water","Flying"]
+    "noEffect": ["Ground"],
+    "weakTowards": ["Electric","Grass","Dragon"],
+    "strongTowards": ["Water","Flying"]
   },
   {
+    "id": "4",
     "type": "Grass",
-    "no-effect": [],
-    "weak-towards": ["Fire","Grass","Poison","Flying","Bug","Dragon","Steel"],
-    "strong-towards": ["Water","Ground","Rock"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Grass","Poison","Flying","Bug","Dragon","Steel"],
+    "strongTowards": ["Water","Ground","Rock"]
   },
   {
+    "id": "5",
     "type": "Ice",
-    "no-effect": [],
-    "weak-towards": ["Fire","Water","Ice","Steel"],
-    "strong-towards": ["Grass","Ground","Flying","Dragon"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Water","Ice","Steel"],
+    "strongTowards": ["Grass","Ground","Flying","Dragon"]
   },
   {
+    "id": "6",
     "type": "Fighting",
-    "no-effect": ["Ghost"],
-    "weak-towards": ["Poison","Flying","Psychic","Bug","Fairy"],
-    "strong-towards": ["Normal","Ice","Rock","Dark","Steel"]
+    "noEffect": ["Ghost"],
+    "weakTowards": ["Poison","Flying","Psychic","Bug","Fairy"],
+    "strongTowards": ["Normal","Ice","Rock","Dark","Steel"]
   },
   {
+    "id": "7",
     "type": "Poison",
-    "no-effect": ["Steel"],
-    "weak-towards": ["Poison","Ground","Rock","Ghost"],
-    "strong-towards": ["Grass","Fairy"]
+    "noEffect": ["Steel"],
+    "weakTowards": ["Poison","Ground","Rock","Ghost"],
+    "strongTowards": ["Grass","Fairy"]
   },
   {
+    "id": "8",
     "type": "Ground",
-    "no-effect": ["Flying"],
-    "weak-towards": ["Grass","Bug"],
-    "strong-towards": ["Fire","Electric","Poison","Rock","Steel"]
+    "noEffect": ["Flying"],
+    "weakTowards": ["Grass","Bug"],
+    "strongTowards": ["Fire","Electric","Poison","Rock","Steel"]
   },
   {
+    "id": "9",
     "type": "Flying",
-    "no-effect": [],
-    "weak-towards": ["Electric","Rock","Steel"],
-    "strong-towards": ["Grass","Fighting","Bug"]
+    "noEffect": [],
+    "weakTowards": ["Electric","Rock","Steel"],
+    "strongTowards": ["Grass","Fighting","Bug"]
   },
   {
+    "id": "10",
     "type": "Psychic",
-    "no-effect": ["Dark"],
-    "weak-towards": ["Psychic","Steel"],
-    "strong-towards": ["Fighting","Poison"]
+    "noEffect": ["Dark"],
+    "weakTowards": ["Psychic","Steel"],
+    "strongTowards": ["Fighting","Poison"]
   },
   {
+    "id": "11",
     "type": "Bug",
-    "no-effect": [],
-    "weak-towards": ["Fire","Fighting","Poison","Flying","Ghost","Steel","Fairy"],
-    "strong-towards": ["Grass","Psychic","Dark"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Fighting","Poison","Flying","Ghost","Steel","Fairy"],
+    "strongTowards": ["Grass","Psychic","Dark"]
   },
   {
+    "id": "12",
     "type": "Rock",
-    "no-effect": [],
-    "weak-towards": ["Fighting","Ground","Steel"],
-    "strong-towards": ["Fire","Ice","Flying","Bug"]
+    "noEffect": [],
+    "weakTowards": ["Fighting","Ground","Steel"],
+    "strongTowards": ["Fire","Ice","Flying","Bug"]
   },
   {
+    "id": "13",
     "type": "Ghost",
-    "no-effect": ["Normal"],
-    "weak-towards": ["Dark"],
-    "strong-towards": ["Psychic","Ghost"]
+    "noEffect": ["Normal"],
+    "weakTowards": ["Dark"],
+    "strongTowards": ["Psychic","Ghost"]
   },
   {
+    "id": "14",
     "type": "Dragon",
-    "no-effect": ["Fairy"],
-    "weak-towards": ["Steel"],
-    "strong-towards": ["Dragon"]
+    "noEffect": ["Fairy"],
+    "weakTowards": ["Steel"],
+    "strongTowards": ["Dragon"]
   },
   {
+    "id": "15",
     "type": "Dark",
-    "no-effect": [],
-    "weak-towards": ["Fighting","Dark","Fairy"],
-    "strong-towards": ["Psychic","Ghost"]
+    "noEffect": [],
+    "weakTowards": ["Fighting","Dark","Fairy"],
+    "strongTowards": ["Psychic","Ghost"]
   },
   {
+    "id": "16",
     "type": "Steel",
-    "no-effect": [],
-    "weak-towards": ["Fire","Water","Electric","Steel"],
-    "strong-towards": ["Ice","Rock","Fairy"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Water","Electric","Steel"],
+    "strongTowards": ["Ice","Rock","Fairy"]
   },
   {
+    "id": "17",
     "type": "Fairy",
-    "no-effect": [],
-    "weak-towards": ["Fire","Poison","Steel"],
-    "strong-towards": ["Fighting","Dragon","Dark"]
+    "noEffect": [],
+    "weakTowards": ["Fire","Poison","Steel"],
+    "strongTowards": ["Fighting","Dragon","Dark"]
   }
 ]
 

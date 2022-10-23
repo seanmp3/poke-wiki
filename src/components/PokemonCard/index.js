@@ -70,15 +70,20 @@ const PokemonCard = ({pokemon}) => {
     display: grid;
     text-align: center;
     grid-auto-flows: row;
-    grid-template-columns: 3fr 1fr 4fr 2fr 4fr;
+    grid-template-columns: 3fr 2fr 4fr 2fr 4fr;
     grid-template-rows: 6rem;
+
+    img {
+      max-width: 100%;
+    }
   `
 
   return (
     <PokeCard>
-      {console.log(pokemonInfo)}
       <h3>{pokemonInfo.id}</h3>
-      <img src={pokemonInfo.sprites.front_default} alt="pokemon"/>
+      <div>
+        <img src={pokemonInfo.sprites.front_default} alt="pokemon"/>
+      </div>
       <h3>{dispName}</h3>
       <span>
         {pokemonInfo.types.map(t => (
