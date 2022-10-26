@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
 import axios from "axios"
-import styled from "styled-components"
+
+import {Main, PokedexContainer, GenLabel, GenSelectors} from "./style"
 
 import PokemonList from "../../components/PokemonList"
 
@@ -36,38 +37,6 @@ const Pokedex = () => {
 
     return () => cancel()
   }, [currentGenUrl])
-
-  const Main = styled.main`
-    display: flex;
-    justify-content: center;
-  `
-
-  const PokedexContainer = styled.section`
-    background: #C7C7C7;
-    border-radius: .5rem;
-    min-height: 79vh;
-    width: 90%;
-    border: 1px solid #000;
-    margin-bottom: 2rem;
-  `
-
-  const GenLabel = styled.h2`
-    text-align: center;
-    margin: 1rem 0;
-  `
-
-  const GenSelectors = styled.span`
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 1rem;
-
-    h4 {
-      cursor: pointer;
-    }
-  `
 
   return (
     <Main>
@@ -137,7 +106,7 @@ const Pokedex = () => {
             setCurrentGenText("Galarian Pokemon")
           }}>810-898</h4>
         </GenSelectors>
-        <PokemonList pokemon={pokemon} loading={isLoading}/>
+        <PokemonList pokemon={pokemon} loading={isLoading} />
       </PokedexContainer>
     </Main>
   )

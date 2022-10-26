@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
-import styled from "styled-components"
+
+import {PokeCard, LoadContainer} from "./style"
 
 const PokemonCard = ({pokemon}) => {
   const [currentPokemonUrl, setCurrentPokemonUrl] = useState(
@@ -60,23 +61,7 @@ const PokemonCard = ({pokemon}) => {
     return () => cancel()
   }, [currentPokemonUrl])
 
-  const Load = styled.h2`
-    text-align: center;
-  `
-
-  if (isLoading) return <Load>Loading...</Load>
-
-  const PokeCard = styled.div`
-    display: grid;
-    text-align: center;
-    grid-auto-flows: row;
-    grid-template-columns: 3fr 2fr 4fr 2fr 4fr;
-    grid-template-rows: 6rem;
-
-    img {
-      max-width: 100%;
-    }
-  `
+  if (isLoading) return <LoadContainer>Loading...</LoadContainer>
 
   return (
     <PokeCard>

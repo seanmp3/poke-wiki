@@ -1,6 +1,13 @@
+import {HomeConatiner} from "./style"
+
 const Home = () => {
   return (
-    <h2>Poketch App</h2>
+    <HomeConatiner>
+      <div>
+        <h1>Welcome to the PokeWiki</h1>
+        <p>PokeWiki is an online resource to quickly find pokemon related knowledge</p>
+      </div>
+    </HomeConatiner>
   )
 }
 
