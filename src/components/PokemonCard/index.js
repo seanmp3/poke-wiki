@@ -4,11 +4,10 @@ import axios from "axios"
 import {PokeCard, LoadContainer} from "./style"
 
 const PokemonCard = ({pokemon}) => {
-  const [currentPokemonUrl, setCurrentPokemonUrl] = useState(
-    `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-  )
   const [pokemonInfo, setPokemonInfo] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+
+  const currentPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
   
   //filtering exact pokemon display names
   let dispName
@@ -65,11 +64,11 @@ const PokemonCard = ({pokemon}) => {
 
   return (
     <PokeCard>
-      <h3>{pokemonInfo.id}</h3>
-      <div>
+      <h3 className="gridItem">{pokemonInfo.id}</h3>
+      <div className="gridItem">
         <img src={pokemonInfo.sprites.front_default} alt="pokemon"/>
       </div>
-      <h3>{dispName}</h3>
+      <h3 className="gridItem">{dispName}</h3>
       <span>
         {pokemonInfo.types.map(t => (
           <h3>{t.type.name}</h3>

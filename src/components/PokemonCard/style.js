@@ -10,6 +10,18 @@ export const PokeCard = styled.div`
   img {
     max-width: 100%;
   }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gridItem {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
 `
 
 export const LoadContainer = styled.h2`

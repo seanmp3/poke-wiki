@@ -8,5 +8,11 @@ export const PokeCard = styled.div`
   grid-auto-flows: row;
   grid-template-columns: 3fr 2fr 4fr 2fr 4fr;
   grid-template-rows: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .3rem;
+
+  h3 {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
 `

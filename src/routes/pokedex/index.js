@@ -49,7 +49,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=151"
             )
             setCurrentGenText("Kantonese Pokemon")
-          }}>1-151</h4>
+          }}>1-<br/>151</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -57,7 +57,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
             )
             setCurrentGenText("Johtonian Pokemon")
-          }}>152-251</h4>
+          }}>152-<br/>251</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -65,7 +65,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=135&offset=251"
             )
             setCurrentGenText("Hoenn Pokemon")
-          }}>252-386</h4>
+          }}>252-<br/>386</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -73,7 +73,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=107&offset=386"
             )
             setCurrentGenText("Sinnohian Pokemon")
-          }}>387-493</h4>
+          }}>387-<br/>493</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -81,7 +81,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493"
             )
             setCurrentGenText("Unovan Pokemon")
-          }}>494-649</h4>
+          }}>494-<br/>649</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -89,14 +89,14 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649"
             )
             setCurrentGenText("Kalosian Pokemon")
-          }}>650-721</h4>
+          }}>650-<br/>721</h4>
           <h4 onClick={(e) => {
             e.preventDefault()
             setCurrentGenUrl(
               "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721"
             )
             setCurrentGenText("Alolan Pokemon")
-          }}>722-809</h4>
+          }}>722-<br/>809</h4>
 
           <h4 onClick={(e) => {
             e.preventDefault()
@@ -104,7 +104,7 @@ const Pokedex = () => {
               "https://pokeapi.co/api/v2/pokemon?limit=89&offset=809"
             )
             setCurrentGenText("Galarian Pokemon")
-          }}>810-898</h4>
+          }}>810-<br/>898</h4>
         </GenSelectors>
         <PokemonList pokemon={pokemon} loading={isLoading} />
       </PokedexContainer>

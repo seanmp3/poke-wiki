@@ -31,31 +31,31 @@ const TypeMatchups = () => {
   useEffect(() => {
     if(targetSecondType === "none"){
       if(typeMatchups[moveType].noEffect.includes(typeMatchups[targetMainType].type)){
-        setEffect("No Effect")
+        setEffect("Not")
       }else if(typeMatchups[moveType].strongTowards.includes(typeMatchups[targetMainType].type)){
-        setEffect("Super Effective!")
+        setEffect("Super")
       }else if(typeMatchups[moveType].weakTowards.includes(typeMatchups[targetMainType].type)){
-        setEffect("Not Very Effective")
+        setEffect("Not Very")
       }else{
-        setEffect("Normally Effective")
+        setEffect("Normally")
       }
     }else{
       if(typeMatchups[moveType].noEffect.includes(typeMatchups[targetMainType].type) || typeMatchups[moveType].noEffect.includes(typeMatchups[targetSecondType].type)){
-        setEffect("No Effect")
+        setEffect("No")
       }else if(typeMatchups[moveType].strongTowards.includes(typeMatchups[targetMainType].type) && typeMatchups[moveType].strongTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Very Super Effective!")
+        setEffect("Very Super")
       }else if(typeMatchups[moveType].weakTowards.includes(typeMatchups[targetMainType].type) && typeMatchups[moveType].weakTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Barely Effective")
+        setEffect("Barely")
       }else if(typeMatchups[moveType].strongTowards.includes(typeMatchups[targetMainType].type) && typeMatchups[moveType].weakTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Normally Effective")
+        setEffect("Normally")
       }else if(typeMatchups[moveType].weakTowards.includes(typeMatchups[targetMainType].type) && typeMatchups[moveType].strongTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Normally Effective")
+        setEffect("Normally")
       }else if(typeMatchups[moveType].strongTowards.includes(typeMatchups[targetMainType].type) || typeMatchups[moveType].strongTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Super Effective!")
+        setEffect("Super")
       }else if(typeMatchups[moveType].weakTowards.includes(typeMatchups[targetMainType].type) || typeMatchups[moveType].weakTowards.includes(typeMatchups[targetSecondType].type)){
-        setEffect("Not Very Effective")
+        setEffect("Not Very")
       }else{
-        setEffect("Normally Effective")
+        setEffect("Normally")
       }
     }
   }, [moveType, targetMainType, targetSecondType])
@@ -86,11 +86,11 @@ const TypeMatchups = () => {
     <Main>
       <MatchupContainer>
         <TitleContainer>
-          <h1>Type Matchup Calculator</h1>
+          <h1>Type Matchup <br/>Calculator</h1>
         </TitleContainer>
         <SelectionsContainer>
           <SelectionContainer>
-            <h3>Move Type: {typeMatchups[moveType].type}</h3>
+            <h3>Move Type: <br/>{typeMatchups[moveType].type}</h3>
             <Dropdown
               type={moveType} 
               handleChange={handleChange} 
@@ -99,10 +99,10 @@ const TypeMatchups = () => {
             />
           </SelectionContainer>
           <SelectionContainer>
-          <h3>
-            Target's Type
-              {targetSecondType === "none" ? ": " : "s: "} 
-              {typeMatchups[targetMainType].type}{" "}
+            <h3>
+              Target's Type
+              {targetSecondType === "none" ? ": " : "s: "}
+              <br/>{typeMatchups[targetMainType].type}{" "}
               {targetSecondType !== "none" 
                 && typeMatchups[targetSecondType].type}
             </h3>
@@ -129,12 +129,12 @@ const TypeMatchups = () => {
             <TargetMainImg />
             {targetSecondType !== "none" && <TargetSecondImg />}
           </div>
-          <h3>{effect}</h3>
+          <h3>{effect} <br/>Effective</h3>
         </ResultContainer>
         <ChartContainer>
           <div>
             <h5>Multipliers</h5>
-            <p>No Effect - 0x</p>
+            <p>Not Effective - 0x</p>
             <p>Barely Effective - 0.25x</p>
             <p>Not Very Effective - 0.5x</p>
             <p>Normally Effective - 1x</p>

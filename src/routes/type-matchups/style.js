@@ -14,15 +14,29 @@ export const MatchupContainer = styled.section`
   width: 90%;
   border: 1px solid #000;
   margin: 10rem 0 2rem;
+
+  @media (max-width: 450px) {
+    margin: 14.5rem 0 2rem;
+    min-height: 71vh;
+  }
 `
 
 export const TitleContainer = styled.div`
   padding: .5rem;
+  display: flex;
+  justify-content: center;
 
   h1 {
-    text-align: center;
     font-size: 2rem;
     text-decoration: underline;
+    text-align: center;
+
+    br {
+      display: none;
+      @media (max-width: 430px) {
+        display: inline;
+      }
+    }
   }
 `
 
@@ -42,6 +56,14 @@ export const SelectionContainer = styled.div`
   h3 {
     font-size: 1.5rem;
     margin-bottom: .5rem;
+    text-align: center;
+
+    br {
+      display: none;
+      @media (max-width: 430px) {
+        display: inline;
+      }
+    }
   }
 `
 
@@ -62,6 +84,14 @@ export const ResultContainer = styled.div`
   h3 {
     font-size: 2rem;
     margin-bottom: 2.5rem;
+    text-align: center;
+    
+    br {
+      display: none;
+      @media (max-width: 430px) {
+        display: inline;
+      }
+    }
   }
 `
 
